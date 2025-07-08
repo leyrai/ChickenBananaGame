@@ -30,7 +30,6 @@ function App() {
   const [winner, setWinner] = useState(null);
   const [clickCounts, setClickCounts] = useState({ chicken: 0, banana: 0 });
 
-  // Reveal all tiles when there's a winner
   useEffect(() => {
     if (winner) {
       setRevealed(Array(totalTiles).fill(true));
@@ -75,6 +74,11 @@ function App() {
     setClickCounts({ chicken: 0, banana: 0 });
   };
 
+  const revealAll = () => {
+    const anyHidden = revealed.includes(false);
+    setRevealed(Array(totalTiles).fill(anyHidden));
+  };
+
   const chooseSide = (side) => {
     const updatedPlayers = { ...players, [side]: true };
     setPlayers(updatedPlayers);
@@ -117,10 +121,12 @@ function App() {
                 Click the same tile simultaneously!
               </h2>
             )}
-            <div style={{ marginBottom: '1rem', color: '#ccc' }}>
-              <p>🐔 Chicken: {clickCounts.chicken}/18 | 🍌 Banana: {clickCounts.banana}/18</p>
+            <div style={{ marginBottom: '1rem' }}>
+              <button className="reset-btn" onClick={resetGame}>Restart Game</button>
+              <button className="reveal-btn" onClick={revealAll}>
+                {revealed.includes(false) ? 'Reveal All' : 'Hide All'}
+              </button>
             </div>
-            <button className="reset-btn" onClick={resetGame}>Restart Game</button>
             <div className="grid">
               {images.map((img, index) => (
                 <div

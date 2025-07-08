@@ -80,6 +80,8 @@ function App() {
   };
 
   const chooseSide = (side) => {
+    if (players[side]) return; // side already chosen
+
     const updatedPlayers = { ...players, [side]: true };
     setPlayers(updatedPlayers);
 
@@ -97,20 +99,29 @@ function App() {
             <h2>Select Your Side</h2>
             <div className="side-select">
               <button
-                className="side-btn"
+                className={`side-btn ${players.chicken ? 'selected' : ''}`}
                 onClick={() => chooseSide('chicken')}
                 disabled={players.chicken}
               >
                 🐔 Play as Chicken
               </button>
               <button
-                className="side-btn"
+                className={`side-btn ${players.banana ? 'selected' : ''}`}
                 onClick={() => chooseSide('banana')}
                 disabled={players.banana}
               >
                 🍌 Play as Banana
               </button>
             </div>
+            {(players.chicken || players.banana) && (
+              <p className="chosen-side-text">
+                You are playing as {players.chicken ? '🐔 Chicken' : '🍌 Banana'}!
+              </p>
+            )}
+            <p>
+              {players.chicken && !players.banana && 'Waiting for Banana player...'}
+              {players.banana && !players.chicken && 'Waiting for Chicken player...'}
+            </p>
           </>
         ) : (
           <>

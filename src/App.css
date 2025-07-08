@@ -63,7 +63,7 @@ h1 {
   object-fit: cover;
   border: 2px solid #8f8fff;
   box-shadow: 0 0 15px rgba(111, 112, 255, 0.3);
-
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   background-color: #1a1a2e;
 }
 
@@ -126,4 +126,23 @@ h1 {
   margin-bottom: 1rem;
   margin-top: 2rem;
   text-shadow: 0 0 10px #5f5aff;
+}
+
+.reveal-btn {
+  margin-left: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.reveal-btn:hover {
+  background-color: #ff8585;
+  transform: scale(1.05);
 }

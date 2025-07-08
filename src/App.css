@@ -112,6 +112,21 @@ h1 {
   opacity: 0.6;
 }
 
+/* New styles */
+.side-btn.selected {
+  background-color: #7f8aff;
+  box-shadow: 0 0 20px #7f8aff;
+  cursor: default;
+}
+
+.chosen-side-text {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #c3baff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #5f5aff;
+}
+
 .winner {
   font-size: 1.5rem;
   color: #ffd700;

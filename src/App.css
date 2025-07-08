@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #12121a 100%);
+  color: #eee;
+  font-family: 'Courier New', monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(30, 30, 60, 0.8);
+  border: 2px solid #5f5aff;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(111, 112, 255, 0.2);
+  max-width: 800px;
+  width: 90%;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #c3baff;
+  text-shadow: 0 0 8px #5f5aff;
+}
+
+.reset-btn {
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #5f5aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(111, 112, 255, 0.4);
+}
+
+.reset-btn:hover {
+  background-color: #7772ff;
+  transform: scale(1.05);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid #8f8fff;
+  box-shadow: 0 0 15px rgba(111, 112, 255, 0.3);
+
+  background-color: #1a1a2e;
+}
+
+.square:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.player-input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 250px;
+  text-align: center;
+}
+
+.side-select {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.side-btn {
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #5f5aff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(111, 112, 255, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.side-btn:hover {
+  background-color: #7772ff;
+  transform: scale(1.05);
+}
+
+.side-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.winner {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px #fff;
+}
+
+.game-title {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  text-shadow: 0 0 10px #5f5aff;
+}
